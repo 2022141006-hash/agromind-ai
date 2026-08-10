@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "AgroMind AI - Backend API (Clean Architecture)",
   "main": "dist/app.js",
-  "scripts": {
+ "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
     "build": "tsc",
     "start": "node dist/app.js",
-    "migrate": "knex migrate:latest --knexfile src/database/knexfile.ts",
-    "migrate:rollback": "knex migrate:rollback --knexfile src/database/knexfile.ts",
-    "seed": "knex seed:run --knexfile src/database/knexfile.ts",
+    "migrate": "npx knex migrate:latest --knexfile src/database/knexfile.ts",
+    "migrate:rollback": "npx knex migrate:rollback --knexfile src/database/knexfile.ts",
+    "seed": "npx knex seed:run --knexfile src/database/knexfile.ts",
     "lint": "eslint src --ext .ts"
   },
   "dependencies": {
