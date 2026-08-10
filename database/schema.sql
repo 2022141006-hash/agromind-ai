@@ -1,16 +1,6 @@
 -- ============================================================
--- AgroMind AI - Database Schema
--- Base de datos: agromind_db
--- Motor: MariaDB 10.x+
--- Versión: 1.0.0
+-- AgroMind AI - Database Schema (Versión para Clever Cloud)
 -- ============================================================
-
-DROP DATABASE IF EXISTS agromind_db;
-CREATE DATABASE agromind_db
-  CHARACTER SET utf8mb4
-  COLLATE utf8mb4_unicode_ci;
-
-USE agromind_db;
 
 -- ============================================================
 -- 1. Tabla: roles
@@ -224,7 +214,6 @@ CREATE TABLE IF NOT EXISTS recomendaciones (
   tipo_suelo_id INT NOT NULL,
   fertilizante_id INT DEFAULT NULL,
   modelo_ia_id INT DEFAULT NULL,
-  -- Parámetros de entrada
   temperatura DECIMAL(5,2) NOT NULL,
   humedad DECIMAL(5,2) NOT NULL,
   ph DECIMAL(4,2) NOT NULL,
@@ -233,14 +222,12 @@ CREATE TABLE IF NOT EXISTS recomendaciones (
   potasio DECIMAL(8,3) NOT NULL,
   materia_organica DECIMAL(5,3) NOT NULL,
   conductividad_electrica DECIMAL(6,3) NOT NULL,
-  -- Resultados del modelo ML
   fertilizante_codigo_predicho VARCHAR(50) DEFAULT NULL,
   cantidad_recomendada DECIMAL(8,2) DEFAULT NULL,
   unidad_cantidad VARCHAR(30) DEFAULT 'kg/ha',
   nivel_confianza DECIMAL(5,4) DEFAULT NULL,
   deficiencias_detectadas JSON DEFAULT NULL,
   justificacion TEXT DEFAULT NULL,
-  -- Resultado enriquecido desde BD
   recomendaciones_adicionales TEXT DEFAULT NULL,
   buenas_practicas TEXT DEFAULT NULL,
   nivel_riesgo ENUM('bajo', 'moderado', 'alto') DEFAULT 'bajo',
@@ -333,15 +320,23 @@ CREATE TABLE IF NOT EXISTS reportes (
 ) ENGINE=InnoDB;
 
 -- ============================================================
--- ÍNDICES para rendimiento
+-- ÍNDICES
 -- ============================================================
-CREATE INDEX IF NOT EXISTS idx_recomendaciones_usuario ON recomendaciones(usuario_id);
-CREATE INDEX IF NOT EXISTS idx_recomendaciones_cultivo ON recomendaciones(cultivo_id);
-CREATE INDEX IF NOT EXISTS idx_recomendaciones_fecha ON recomendaciones(created_at);
-CREATE INDEX IF NOT EXISTS idx_historial_usuario ON historial_analisis(usuario_id);
-CREATE INDEX IF NOT EXISTS idx_historial_recomendacion ON historial_analisis(recomendacion_id);
-CREATE INDEX IF NOT EXISTS idx_logs_nivel ON logs(nivel);
-CREATE INDEX IF NOT EXISTS idx_logs_fecha ON logs(created_at);
-CREATE INDEX IF NOT EXISTS idx_usuarios_email ON usuarios(email);
-CREATE INDEX IF NOT EXISTS idx_fertilizantes_codigo ON fertilizantes(codigo);
+CREATE INDEX idx_recomendaciones_usuario ON recomendaciones(usuario_id);
+CREATE INDEX idx_recomendaciones_cultivo ON recomendaciones(cultivo_id);
+CREATE INDEX idx_recomendaciones_fecha ON recomendaciones(created_at);
+CREATE INDEX idx_historial_usuario ON historial_analisis(usuario_id);
+CREATE INDEX idx_historial_recomendacion ON historial_analisis(recomendacion_id);
+CREATE INDEX idx_logs_nivel ON logs(nivel);
+CREATE INDEX idx_logs_fecha ON logs(created_at);
+CREATE INDEX idx_usuarios_email ON usuarios(email);
+CREATE INDEX idx_fertilizantes_codigo ON fertilizantes(codigo);
+
+-- ============================================================
+-- ROLES INICIALES
+-- ============================================================
+INSERT IGNORE INTO roles (id, nombre, descripcion) VALUES
+(1, 'Admin', 'Administrador del sistema'),
+(2, 'Agrónomo', 'Especialista agrónomo'),
+(3, 'Usuario', 'Usuario estándar');
 

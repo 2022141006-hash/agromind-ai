@@ -1,7 +1,8 @@
 import axios, { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import { ApiResponse } from '../types';
 
-const BASE_URL = import.meta.env.VITE_API_URL || '/api/v1';
+// Se establece la URL del backend en Render como fallback directo en producción
+const BASE_URL = import.meta.env.VITE_API_URL || 'https://backend-service-ue3f.onrender.com/api/v1';
 
 export const apiClient = axios.create({
   baseURL: BASE_URL,
@@ -11,7 +12,7 @@ export const apiClient = axios.create({
   },
 });
 
-// Request interceptor — attach JWT token
+// Interceptor de peticiones — adjunta el token JWT
 apiClient.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     const token = localStorage.getItem('agromind_token');
@@ -23,7 +24,7 @@ apiClient.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Response interceptor — handle 401 globally
+// Interceptor de respuestas — manejo global de sesión expirada (401)
 apiClient.interceptors.response.use(
   (response: AxiosResponse) => response,
   (error) => {
