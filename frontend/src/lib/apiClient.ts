@@ -2,7 +2,7 @@ import axios, { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import { ApiResponse } from '../types';
 
 // Se establece la URL del backend en Render como fallback directo en producción
-const BASE_URL = import.meta.env.VITE_API_URL || 'https://backend-service-ue3f.onrender.com/api/v1';
+const BASE_URL = 'https://backend-service-ue3f.onrender.com/api/v1';
 
 export const apiClient = axios.create({
   baseURL: BASE_URL,
