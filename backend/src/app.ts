@@ -19,7 +19,7 @@ const app = express();
 // ─── Security Middlewares ─────────────────────────────────────
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 app.use(cors({
-  origin: env.cors.origins,
+  origin: (origin, callback) => callback(null, true), // Permite cualquier origen dinámicamente manteniendo soporte para credenciales
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
