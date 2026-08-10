@@ -1,0 +1,185 @@
+[2026-08-06 17:04:37] INFO: 
+  ╔══════════════════════════════════════════════════╗
+  ║                                                  ║
+  ║   🌱  AgroMind AI - Backend API                  ║
+  ║   📡  Puerto: 4000                              ║
+  ║   🔗  http://localhost:4000/api/v1              ║
+  ║   📦  Entorno: development                    ║
+  ║   🤖  ML Service: http://localhost:8000      ║
+  ║                                                  ║
+  ╚══════════════════════════════════════════════════╝
+      
+[2026-08-06 17:04:59] WARN: [POST] /api/v1/auth/login - 401: Credenciales inválidas
+[2026-08-06 17:04:59] INFO: [0mPOST /api/v1/auth/login [33m401[0m 16.830 ms - 92[0m
+[2026-08-06 17:05:02] WARN: [POST] /api/v1/auth/login - 401: Credenciales inválidas
+[2026-08-06 17:05:02] INFO: [0mPOST /api/v1/auth/login [33m401[0m 3.251 ms - 92[0m
+[2026-08-06 17:05:05] WARN: [POST] /api/v1/auth/login - 401: Credenciales inválidas
+[2026-08-06 17:05:05] INFO: [0mPOST /api/v1/auth/login [33m401[0m 2.429 ms - 92[0m
+[2026-08-06 17:05:35] WARN: [POST] /api/v1/auth/login - 401: Credenciales inválidas
+[2026-08-06 17:05:35] INFO: [0mPOST /api/v1/auth/login [33m401[0m 3.245 ms - 92[0m
+[2026-08-06 17:05:36] WARN: [POST] /api/v1/auth/login - 401: Credenciales inválidas
+[2026-08-06 17:05:36] INFO: [0mPOST /api/v1/auth/login [33m401[0m 2.373 ms - 92[0m
+[2026-08-06 17:05:44] WARN: [POST] /api/v1/auth/login - 401: Credenciales inválidas
+[2026-08-06 17:05:44] INFO: [0mPOST /api/v1/auth/login [33m401[0m 2.841 ms - 92[0m
+[2026-08-06 17:05:59] WARN: [POST] /api/v1/auth/login - 401: Credenciales inválidas
+[2026-08-06 17:05:59] INFO: [0mPOST /api/v1/auth/login [33m401[0m 2.933 ms - 92[0m
+[2026-08-06 17:10:10] INFO: 
+  ╔══════════════════════════════════════════════════╗
+  ║                                                  ║
+  ║   🌱  AgroMind AI - Backend API                  ║
+  ║   📡  Puerto: 4000                              ║
+  ║   🔗  http://localhost:4000/api/v1              ║
+  ║   📦  Entorno: development                    ║
+  ║   🤖  ML Service: http://localhost:8000      ║
+  ║                                                  ║
+  ╚══════════════════════════════════════════════════╝
+      
+[2026-08-06 17:10:22] WARN: [POST] /api/v1/auth/login - 401: Credenciales inválidas
+[2026-08-06 17:10:22] INFO: [0mPOST /api/v1/auth/login [33m401[0m 95.569 ms - 92[0m
+[2026-08-06 17:10:25] INFO: [0mPOST /api/v1/auth/login [32m200[0m 86.058 ms - 536[0m
+[2026-08-06 17:10:25] INFO: [0mGET /api/v1/admin/reports/by-crop [32m200[0m 26.761 ms - 96[0m
+[2026-08-06 17:10:25] INFO: [0mGET /api/v1/admin/reports/by-crop [32m200[0m 16.868 ms - 96[0m
+[2026-08-06 17:10:25] INFO: [0mGET /api/v1/recommendations?limit=5 [32m200[0m 26.595 ms - 216[0m
+[2026-08-06 17:10:25] INFO: [0mGET /api/v1/recommendations?limit=5 [32m200[0m 41.293 ms - 216[0m
+[2026-08-06 17:10:25] INFO: [0mGET /api/v1/admin/dashboard [32m200[0m 52.787 ms - -[0m
+[2026-08-06 17:10:25] INFO: [0mGET /api/v1/admin/dashboard [32m200[0m 42.678 ms - -[0m
+[2026-08-06 17:10:38] INFO: [0mGET /api/v1/admin/crops [32m200[0m 3.478 ms - -[0m
+[2026-08-06 17:10:40] INFO: [0mGET /api/v1/admin/soil-types [32m200[0m 3.016 ms - -[0m
+[2026-08-06 17:10:40] INFO: [0mGET /api/v1/admin/soil-types [32m200[0m 4.058 ms - -[0m
+[2026-08-06 17:10:40] INFO: [0mGET /api/v1/admin/crops [32m200[0m 2.886 ms - -[0m
+[2026-08-06 17:10:40] INFO: [0mGET /api/v1/admin/reports/by-crop [32m200[0m 6.840 ms - 96[0m
+[2026-08-06 17:10:40] INFO: [0mGET /api/v1/recommendations?limit=5 [32m200[0m 15.766 ms - 216[0m
+[2026-08-06 17:10:40] INFO: [0mGET /api/v1/admin/dashboard [32m200[0m 10.037 ms - -[0m
+[2026-08-06 17:10:40] INFO: [0mGET /api/v1/admin/dashboard [32m200[0m 16.467 ms - -[0m
+[2026-08-06 17:10:40] INFO: [0mGET /api/v1/recommendations?limit=5 [32m200[0m 3.594 ms - 216[0m
+[2026-08-06 17:10:40] INFO: [0mGET /api/v1/admin/reports/by-crop [32m200[0m 2.904 ms - 96[0m
+[2026-08-06 17:10:42] INFO: [0mGET /api/v1/admin/crops [32m200[0m 3.413 ms - -[0m
+[2026-08-06 17:10:42] INFO: [0mGET /api/v1/admin/soil-types [32m200[0m 5.146 ms - -[0m
+[2026-08-06 17:10:42] INFO: [0mGET /api/v1/admin/soil-types [32m200[0m 3.436 ms - -[0m
+[2026-08-06 17:10:42] INFO: [0mGET /api/v1/admin/crops [32m200[0m 4.290 ms - -[0m
+[2026-08-06 17:10:46] INFO: [0mGET /api/v1/admin/reports/by-crop [32m200[0m 7.949 ms - 96[0m
+[2026-08-06 17:10:46] INFO: [0mGET /api/v1/admin/reports/by-crop [32m200[0m 7.340 ms - 96[0m
+[2026-08-06 17:10:46] INFO: [0mGET /api/v1/recommendations?limit=5 [32m200[0m 14.618 ms - 216[0m
+[2026-08-06 17:10:46] INFO: [0mGET /api/v1/recommendations?limit=5 [32m200[0m 15.042 ms - 216[0m
+[2026-08-06 17:10:46] INFO: [0mGET /api/v1/admin/dashboard [32m200[0m 23.848 ms - -[0m
+[2026-08-06 17:10:46] INFO: [0mGET /api/v1/admin/dashboard [32m200[0m 19.384 ms - -[0m
+[2026-08-06 17:10:50] INFO: [0mGET /api/v1/recommendations?page=1&limit=10&search= [32m200[0m 4.873 ms - 217[0m
+[2026-08-06 17:10:50] INFO: [0mGET /api/v1/recommendations?page=1&limit=10&search= [32m200[0m 8.012 ms - 217[0m
+[2026-08-06 17:10:50] INFO: [0mGET /api/v1/admin/crops [32m200[0m 2.611 ms - -[0m
+[2026-08-06 17:10:50] INFO: [0mGET /api/v1/admin/crops [32m200[0m 2.023 ms - -[0m
+[2026-08-06 17:10:50] INFO: [0mGET /api/v1/admin/reports/by-fertilizer [32m200[0m 7.089 ms - 96[0m
+[2026-08-06 17:10:50] INFO: [0mGET /api/v1/admin/reports/by-soil [32m200[0m 6.307 ms - 96[0m
+[2026-08-06 17:10:50] INFO: [0mGET /api/v1/admin/reports/by-fertilizer [32m200[0m 5.988 ms - 96[0m
+[2026-08-06 17:10:50] INFO: [0mGET /api/v1/admin/reports/by-soil [32m200[0m 5.951 ms - 96[0m
+[2026-08-06 17:10:50] INFO: [0mGET /api/v1/admin/reports/by-crop [32m200[0m 5.749 ms - 96[0m
+[2026-08-06 17:10:50] INFO: [0mGET /api/v1/admin/reports/by-crop [32m200[0m 1.446 ms - 96[0m
+[2026-08-06 17:10:51] INFO: [0mGET /api/v1/admin/crops [32m200[0m 2.536 ms - -[0m
+[2026-08-06 17:10:51] INFO: [0mGET /api/v1/admin/crops [32m200[0m 1.766 ms - -[0m
+[2026-08-06 17:11:03] INFO: [0mGET /api/v1/admin/crops [32m200[0m 1.839 ms - -[0m
+[2026-08-06 17:11:03] INFO: [0mGET /api/v1/admin/soil-types [32m200[0m 1.883 ms - -[0m
+[2026-08-06 17:11:03] INFO: [0mGET /api/v1/admin/crops [32m200[0m 1.621 ms - -[0m
+[2026-08-06 17:11:03] INFO: [0mGET /api/v1/admin/soil-types [32m200[0m 1.512 ms - -[0m
+[2026-08-06 17:13:34] ERROR: Error calling ML service: Request failed with status code 503
+AxiosError: Request failed with status code 503
+    at settle (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:2354:12)
+    at IncomingMessage.handleStreamEnd (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:4407:11)
+    at IncomingMessage.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1729:12)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:5864:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at RecommendationsService.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.service.ts:28:24)
+    at RecommendationsController.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.controller.ts:11:22)
+[2026-08-06 17:13:34] WARN: [POST] /api/v1/recommendations - 503: El servicio de predicción no está disponible. Inténtelo más tarde.
+[2026-08-06 17:13:34] INFO: [0mPOST /api/v1/recommendations [31m503[0m 47.503 ms - 139[0m
+[2026-08-06 17:13:37] ERROR: Error calling ML service: Request failed with status code 503
+AxiosError: Request failed with status code 503
+    at settle (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:2354:12)
+    at IncomingMessage.handleStreamEnd (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:4407:11)
+    at IncomingMessage.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1729:12)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:5864:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at RecommendationsService.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.service.ts:28:24)
+    at RecommendationsController.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.controller.ts:11:22)
+[2026-08-06 17:13:37] WARN: [POST] /api/v1/recommendations - 503: El servicio de predicción no está disponible. Inténtelo más tarde.
+[2026-08-06 17:13:37] INFO: [0mPOST /api/v1/recommendations [31m503[0m 8.756 ms - 139[0m
+[2026-08-06 17:13:39] ERROR: Error calling ML service: Request failed with status code 503
+AxiosError: Request failed with status code 503
+    at settle (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:2354:12)
+    at IncomingMessage.handleStreamEnd (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:4407:11)
+    at IncomingMessage.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1729:12)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:5864:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at RecommendationsService.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.service.ts:28:24)
+    at RecommendationsController.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.controller.ts:11:22)
+[2026-08-06 17:13:39] WARN: [POST] /api/v1/recommendations - 503: El servicio de predicción no está disponible. Inténtelo más tarde.
+[2026-08-06 17:13:39] INFO: [0mPOST /api/v1/recommendations [31m503[0m 7.051 ms - 139[0m
+[2026-08-06 17:13:40] ERROR: Error calling ML service: Request failed with status code 503
+AxiosError: Request failed with status code 503
+    at settle (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:2354:12)
+    at IncomingMessage.handleStreamEnd (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:4407:11)
+    at IncomingMessage.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1729:12)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:5864:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at RecommendationsService.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.service.ts:28:24)
+    at RecommendationsController.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.controller.ts:11:22)
+[2026-08-06 17:13:40] WARN: [POST] /api/v1/recommendations - 503: El servicio de predicción no está disponible. Inténtelo más tarde.
+[2026-08-06 17:13:40] INFO: [0mPOST /api/v1/recommendations [31m503[0m 6.480 ms - 139[0m
+[2026-08-06 17:15:40] INFO: 
+  ╔══════════════════════════════════════════════════╗
+  ║                                                  ║
+  ║   🌱  AgroMind AI - Backend API                  ║
+  ║   📡  Puerto: 4000                              ║
+  ║   🔗  http://localhost:4000/api/v1              ║
+  ║   📦  Entorno: development                    ║
+  ║   🤖  ML Service: http://localhost:8000      ║
+  ║                                                  ║
+  ╚══════════════════════════════════════════════════╝
+      
+[2026-08-06 17:15:45] INFO: [0mGET /api/v1/admin/crops [32m200[0m 13.524 ms - -[0m
+[2026-08-06 17:15:45] INFO: [0mGET /api/v1/admin/crops [32m200[0m 14.575 ms - -[0m
+[2026-08-06 17:15:45] INFO: [0mGET /api/v1/admin/soil-types [32m200[0m 14.474 ms - -[0m
+[2026-08-06 17:15:45] INFO: [0mGET /api/v1/admin/soil-types [32m200[0m 1.958 ms - -[0m
+[2026-08-06 17:15:48] INFO: [0mPOST /api/v1/recommendations [32m201[0m 114.028 ms - -[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/recommendations?page=1&limit=10&search= [32m200[0m 6.636 ms - 809[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/admin/crops [32m200[0m 1.876 ms - -[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/admin/reports/by-crop [32m200[0m 2.646 ms - 159[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/admin/reports/by-fertilizer [32m200[0m 2.878 ms - 162[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/admin/crops [32m200[0m 1.770 ms - -[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/admin/reports/by-fertilizer [32m200[0m 1.622 ms - 162[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/recommendations?page=1&limit=10&search= [32m200[0m 3.299 ms - 809[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/admin/reports/by-soil [32m200[0m 2.918 ms - 132[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/admin/reports/by-crop [32m200[0m 4.326 ms - 159[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/admin/reports/by-soil [32m200[0m 3.684 ms - 132[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/recommendations?page=1&limit=10&search= [32m200[0m 12.177 ms - 809[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/recommendations?page=1&limit=10&search= [32m200[0m 9.942 ms - 809[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/admin/crops [32m200[0m 10.549 ms - -[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/admin/crops [32m200[0m 7.193 ms - -[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/admin/crops [32m200[0m 4.283 ms - -[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/admin/crops [32m200[0m 3.865 ms - -[0m
+[2026-08-06 17:16:15] INFO: [0mGET /api/v1/admin/soil-types [32m200[0m 3.253 ms - -[0m
+[2026-08-06 17:16:16] INFO: [0mGET /api/v1/admin/soil-types [32m200[0m 1.585 ms - -[0m
+[2026-08-06 17:16:16] INFO: [0mGET /api/v1/recommendations?page=1&limit=10&search= [32m200[0m 10.268 ms - 809[0m
+[2026-08-06 17:16:16] INFO: [0mGET /api/v1/recommendations?page=1&limit=10&search= [32m200[0m 6.367 ms - 809[0m
+[2026-08-06 17:16:16] INFO: [0mGET /api/v1/admin/crops [32m200[0m 6.019 ms - -[0m
+[2026-08-06 17:16:16] INFO: [0mGET /api/v1/admin/crops [32m200[0m 5.561 ms - -[0m
+[2026-08-06 17:16:18] INFO: [0mGET /api/v1/recommendations/1 [32m200[0m 4.449 ms - -[0m
+[2026-08-06 17:16:18] INFO: [0mGET /api/v1/recommendations/1 [32m200[0m 4.173 ms - -[0m
+[2026-08-06 17:16:20] INFO: [0mGET /api/v1/admin/reports/by-crop [32m200[0m 11.442 ms - 159[0m
+[2026-08-06 17:16:20] INFO: [0mGET /api/v1/admin/reports/by-crop [32m200[0m 11.620 ms - 159[0m
+[2026-08-06 17:16:20] INFO: [0mGET /api/v1/admin/reports/by-soil [32m200[0m 11.545 ms - 132[0m
+[2026-08-06 17:16:20] INFO: [0mGET /api/v1/admin/reports/by-fertilizer [32m200[0m 11.137 ms - 162[0m
+[2026-08-06 17:16:20] INFO: [0mGET /api/v1/admin/reports/by-fertilizer [32m200[0m 10.615 ms - 162[0m
+[2026-08-06 17:16:20] INFO: [0mGET /api/v1/admin/reports/by-soil [32m200[0m 8.343 ms - 132[0m
+[2026-08-06 17:16:26] INFO: [0mGET /api/v1/admin/reports/by-crop [32m200[0m 1.652 ms - 159[0m
+[2026-08-06 17:16:26] INFO: [0mGET /api/v1/admin/reports/by-crop [32m200[0m 7.729 ms - 159[0m
+[2026-08-06 17:16:26] INFO: [0mGET /api/v1/recommendations?limit=5 [32m200[0m 12.660 ms - 808[0m
+[2026-08-06 17:16:26] INFO: [0mGET /api/v1/recommendations?limit=5 [32m200[0m 9.569 ms - 808[0m
+[2026-08-06 17:16:26] INFO: [0mGET /api/v1/admin/dashboard [32m200[0m 20.399 ms - -[0m
+[2026-08-06 17:16:26] INFO: [0mGET /api/v1/admin/dashboard [32m200[0m 16.687 ms - -[0m

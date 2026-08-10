@@ -1,0 +1,6 @@
+{
+  "cv_accuracy_mean": 0.7815,
+  "cv_accuracy_std": 0.038490258507835454,
+  "test_accuracy": 0.814,
+  "dose_mae": 124.78467170594679
+}

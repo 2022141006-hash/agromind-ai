@@ -1,0 +1,44 @@
+[2026-08-06 17:13:34] ERROR: Error calling ML service: Request failed with status code 503
+AxiosError: Request failed with status code 503
+    at settle (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:2354:12)
+    at IncomingMessage.handleStreamEnd (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:4407:11)
+    at IncomingMessage.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1729:12)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:5864:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at RecommendationsService.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.service.ts:28:24)
+    at RecommendationsController.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.controller.ts:11:22)
+[2026-08-06 17:13:37] ERROR: Error calling ML service: Request failed with status code 503
+AxiosError: Request failed with status code 503
+    at settle (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:2354:12)
+    at IncomingMessage.handleStreamEnd (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:4407:11)
+    at IncomingMessage.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1729:12)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:5864:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at RecommendationsService.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.service.ts:28:24)
+    at RecommendationsController.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.controller.ts:11:22)
+[2026-08-06 17:13:39] ERROR: Error calling ML service: Request failed with status code 503
+AxiosError: Request failed with status code 503
+    at settle (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:2354:12)
+    at IncomingMessage.handleStreamEnd (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:4407:11)
+    at IncomingMessage.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1729:12)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:5864:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at RecommendationsService.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.service.ts:28:24)
+    at RecommendationsController.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.controller.ts:11:22)
+[2026-08-06 17:13:40] ERROR: Error calling ML service: Request failed with status code 503
+AxiosError: Request failed with status code 503
+    at settle (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:2354:12)
+    at IncomingMessage.handleStreamEnd (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:4407:11)
+    at IncomingMessage.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1729:12)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\node_modules\axios\dist\node\axios.cjs:5864:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at RecommendationsService.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.service.ts:28:24)
+    at RecommendationsController.create (D:\UNH 2026\INGENIERÍA DE SOFTWARE\Proy_IA2\backend\src\modules\recommendations\recommendations.controller.ts:11:22)
