@@ -16,6 +16,9 @@ import adminRoutes from './modules/admin/admin.routes';
 
 const app = express();
 
+// Activar la confianza de proxy para Render (soluciona rate-limit)
+app.set('trust proxy', 1);
+
 // ─── Security Middlewares ─────────────────────────────────────
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 app.use(cors({
