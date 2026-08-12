@@ -3,12 +3,12 @@ import { Recomendacion, PaginationQuery, PaginatedResult } from '../../shared/ty
 
 export class RecommendationsRepository {
   async create(data: Partial<Recomendacion>): Promise<number> {
-    const [id] = await db('historial_analisis').insert(data);
+    const [id] = await db('recomendaciones').insert(data);
     return id;
   }
 
   async findById(id: number): Promise<Recomendacion | null> {
-    const rec = await db('historial_analisis as r')
+    const rec = await db('recomendaciones as r')
       .leftJoin('cultivos as c', 'r.cultivo_id', 'c.id')
       .leftJoin('tipos_suelo as ts', 'r.tipo_suelo_id', 'ts.id')
       .leftJoin('fertilizantes as f', 'r.fertilizante_id', 'f.id')
@@ -52,7 +52,6 @@ export class RecommendationsRepository {
 
     if (!rec) return null;
 
-    // Get nutrients for the fertilizer
     if (rec.fertilizante_id) {
       const nutrientes = await db('fertilizante_nutrientes as fn')
         .join('nutrientes as n', 'fn.nutriente_id', 'n.id')
@@ -70,7 +69,7 @@ export class RecommendationsRepository {
     const { page = 1, limit = 20, sort = 'created_at', order = 'desc', search, cultivo_id, tipo_suelo_id, desde, hasta, usuario_id } = filters;
     const offset = (page - 1) * limit;
 
-    const baseQuery = db('historial_analisis as r')
+    const baseQuery = db('recomendaciones as r')
       .leftJoin('cultivos as c', 'r.cultivo_id', 'c.id')
       .leftJoin('tipos_suelo as ts', 'r.tipo_suelo_id', 'ts.id')
       .leftJoin('fertilizantes as f', 'r.fertilizante_id', 'f.id')
@@ -124,7 +123,7 @@ export class RecommendationsRepository {
   }
 
   async delete(id: number, userId: number): Promise<boolean> {
-    const affected = await db('historial_analisis')
+    const affected = await db('recomendaciones')
       .where('id', id)
       .where('usuario_id', userId)
       .update({ estado: 0 });
@@ -132,32 +131,32 @@ export class RecommendationsRepository {
   }
 
   async getDashboardStats(userId?: number): Promise<Record<string, unknown>> {
-    const baseQuery = db('historial_analisis').where('estado', 1);
+    const baseQuery = db('recomendaciones').where('estado', 1);
     if (userId) baseQuery.where('usuario_id', userId);
 
     const [totalResult] = await baseQuery.clone().count('id as total');
     const [avgConfianza] = await baseQuery.clone().avg('nivel_confianza as promedio');
 
     const porCultivo = await baseQuery.clone()
-      .join('cultivos', 'historial_analisis.cultivo_id', 'cultivos.id')
+      .join('cultivos', 'recomendaciones.cultivo_id', 'cultivos.id')
       .groupBy('cultivos.nombre')
       .select('cultivos.nombre')
-      .count('historial_analisis.id as cantidad')
+      .count('recomendaciones.id as cantidad')
       .orderBy('cantidad', 'desc')
       .limit(5);
 
     const porFertilizante = await baseQuery.clone()
-      .join('fertilizantes', 'historial_analisis.fertilizante_id', 'fertilizantes.id')
-      .where('historial_analisis.fertilizante_id', '!=', null)
+      .join('fertilizantes', 'recomendaciones.fertilizante_id', 'fertilizantes.id')
+      .where('recomendaciones.fertilizante_id', '!=', null)
       .groupBy('fertilizantes.nombre', 'fertilizantes.codigo')
       .select('fertilizantes.nombre', 'fertilizantes.codigo')
-      .count('historial_analisis.id as cantidad')
+      .count('recomendaciones.id as cantidad')
       .orderBy('cantidad', 'desc')
       .limit(5);
 
     const ultimosMeses = await db.raw(`
       SELECT DATE_FORMAT(created_at, '%Y-%m') as mes, COUNT(*) as cantidad
-      FROM historial_analisis
+      FROM recomendaciones
       WHERE estado = 1 AND created_at >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
       ${userId ? `AND usuario_id = ${userId}` : ''}
       GROUP BY mes ORDER BY mes ASC
