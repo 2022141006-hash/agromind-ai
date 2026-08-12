@@ -12,6 +12,29 @@ declare global {
   }
 }
 
+const normalizeRole = (rol: string): string =>
+  rol.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+const ROLE_ALIASES: Record<string, string> = {
+  admin: 'administrador',
+  administrador: 'administrador',
+  agronomo: 'agronomo',
+  agricultor: 'agricultor',
+  usuario: 'agricultor',
+};
+
+export const canonicalRole = (rol?: string | null): string => {
+  if (!rol) return '';
+  const normalized = normalizeRole(rol);
+  return ROLE_ALIASES[normalized] || normalized;
+};
+
+export const hasRole = (user: JwtPayload | undefined, ...roles: string[]): boolean => {
+  if (!user) return false;
+  const userRole = canonicalRole(user.rolNombre);
+  return roles.some((rol) => canonicalRole(rol) === userRole);
+};
+
 export const authMiddleware = (req: Request, _res: Response, next: NextFunction): void => {
   const authHeader = req.headers.authorization;
 
@@ -38,7 +61,7 @@ export const requireRole = (...roles: string[]) => {
     if (!req.user) {
       throw new AppError('No autenticado', 401);
     }
-    if (!roles.includes(req.user.rolNombre)) {
+    if (!hasRole(req.user, ...roles)) {
       throw new AppError('No tiene permisos para acceder a este recurso', 403);
     }
     next();

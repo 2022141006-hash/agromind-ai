@@ -16,38 +16,38 @@ const COLORS = ['#16A34A', '#22C55E', '#84CC16', '#EAB308', '#3B82F6', '#6366F1'
 export const Dashboard: React.FC = () => {
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [recentRecs, setRecentRecs] = useState<Recommendation[]>([]);
-  const [cropChartData, setCropChartData] = useState<any[]>([]);
+  const [trendData, setTrendData] = useState<{ mes: string; analisis: number }[]>([]);
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
 
+  const MESES = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [dashStats, recsData, cropReports] = await Promise.all([
+        const [dashStats, recsData, monthlyReports] = await Promise.all([
           adminApi.getDashboardStats().catch(() => null),
           recommendationsApi.getAll({ limit: 5 }).catch(() => null),
-          adminApi.getReportByCrop().catch(() => []),
+          adminApi.getReportByMonth().catch(() => []),
         ]);
 
         if (dashStats) setStats(dashStats);
         if (recsData) setRecentRecs(recsData.data);
-        if (cropReports) setCropChartData(cropReports);
+        if (monthlyReports && Array.isArray(monthlyReports)) {
+          const mapped = (monthlyReports as Array<{ mes: string; total: number }>).map((d) => {
+            const [, m] = String(d.mes || '').split('-');
+            const mesLabel = MESES[(Number(m) || 1) - 1] || String(d.mes || '');
+            return { mes: mesLabel, analisis: Number(d.total) || 0 };
+          });
+          setTrendData(mapped);
+        }
       } finally {
         setLoading(false);
       }
     };
     loadData();
   }, []);
-
-  const monthlyData = [
-    { mes: 'Ene', analisis: 12 },
-    { mes: 'Feb', analisis: 19 },
-    { mes: 'Mar', analisis: 25 },
-    { mes: 'Abr', analisis: 32 },
-    { mes: 'May', analisis: 48 },
-    { mes: 'Jun', analisis: 64 },
-  ];
 
   return (
     <div className="space-y-6">
@@ -104,7 +104,7 @@ export const Dashboard: React.FC = () => {
           <div>
             <p className="text-xs font-semibold text-surface-500 uppercase tracking-wider">Precisión del Modelo</p>
             <p className="text-2xl font-bold text-surface-900 dark:text-surface-100 mt-0.5">
-              {loading ? '...' : `${((stats?.precisionModelo || 0.94) * 100).toFixed(1)}%`}
+              {loading ? '...' : ((stats?.precisionModelo || 0) * 100).toFixed(1)}%
             </p>
             <span className="text-[11px] font-medium text-surface-500 flex items-center gap-1 mt-1">
               Random Forest v1.0
@@ -124,7 +124,7 @@ export const Dashboard: React.FC = () => {
           <div>
             <p className="text-xs font-semibold text-surface-500 uppercase tracking-wider">Cultivos Registrados</p>
             <p className="text-2xl font-bold text-surface-900 dark:text-surface-100 mt-0.5">
-              {loading ? '...' : stats?.cultivos || 12}
+              {loading ? '...' : stats?.cultivos || 0}
             </p>
             <span className="text-[11px] font-medium text-surface-500 flex items-center gap-1 mt-1">
               Papa, Maíz, Café, etc.
@@ -144,7 +144,7 @@ export const Dashboard: React.FC = () => {
           <div>
             <p className="text-xs font-semibold text-surface-500 uppercase tracking-wider">Usuarios Activos</p>
             <p className="text-2xl font-bold text-surface-900 dark:text-surface-100 mt-0.5">
-              {loading ? '...' : stats?.usuarios || 3}
+              {loading ? '...' : stats?.usuarios || 0}
             </p>
             <span className="text-[11px] font-medium text-surface-500 flex items-center gap-1 mt-1">
               Agrónomos y Agricultores
@@ -167,7 +167,7 @@ export const Dashboard: React.FC = () => {
           </div>
           <div className="h-64 w-full flex-1">
             <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={monthlyData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+              <AreaChart data={trendData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                 <defs>
                   <linearGradient id="colorAnalisis" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#16A34A" stopOpacity={0.4} />
