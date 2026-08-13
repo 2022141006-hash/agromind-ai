@@ -34,14 +34,26 @@ export const Dashboard: React.FC = () => {
 
         if (dashStats) setStats(dashStats);
         if (recsData) setRecentRecs(recsData.data);
-        if (monthlyReports && Array.isArray(monthlyReports)) {
-          const mapped = (monthlyReports as Array<{ mes: string; total: number }>).map((d) => {
-            const [, m] = String(d.mes || '').split('-');
-            const mesLabel = MESES[(Number(m) || 1) - 1] || String(d.mes || '');
-            return { mes: mesLabel, analisis: Number(d.total) || 0 };
+
+        const reports = Array.isArray(monthlyReports)
+          ? (monthlyReports as Array<{ mes: string; total: number }>)
+          : [];
+        const byMonth: Record<string, number> = {};
+        reports.forEach((d) => {
+          byMonth[String(d.mes || '')] = Number(d.total) || 0;
+        });
+
+        const now = new Date();
+        const months: { mes: string; analisis: number }[] = [];
+        for (let i = 11; i >= 0; i--) {
+          const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+          const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+          months.push({
+            mes: MESES[d.getMonth()],
+            analisis: byMonth[key] ?? 0,
           });
-          setTrendData(mapped);
         }
+        setTrendData(months);
       } finally {
         setLoading(false);
       }
