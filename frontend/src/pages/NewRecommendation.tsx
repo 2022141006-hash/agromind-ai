@@ -64,7 +64,7 @@ export const NewRecommendation: React.FC = () => {
       const rec = await recommendationsApi.create(formData);
       setResult(rec);
       setStep(3);
-      toast.success('¡Análisis Completado!', `Recomendación generada: ${rec.fertilizante_codigo}`);
+      toast.success('¡Análisis Completado!', `Recomendación generada: ${rec.fertilizante_codigo || rec.fertilizante_codigo_predicho}`);
     } catch (err: any) {
       toast.error(
         'Error en el análisis',
@@ -357,10 +357,10 @@ export const NewRecommendation: React.FC = () => {
                       Recomendación Generada por IA
                     </span>
                     <h2 className="text-3xl font-extrabold tracking-tight">
-                      {result.fertilizante_nombre || result.fertilizante_codigo}
+                      {result.fertilizante_nombre || result.fertilizante_codigo || result.fertilizante_codigo_predicho}
                     </h2>
                     <p className="text-white/80 text-sm mt-1">
-                      Código: <span className="font-mono font-bold">{result.fertilizante_codigo}</span>
+                      Código: <span className="font-mono font-bold">{result.fertilizante_codigo || result.fertilizante_codigo_predicho}</span>
                     </p>
                   </div>
 

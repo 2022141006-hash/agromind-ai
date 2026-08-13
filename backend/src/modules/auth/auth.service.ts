@@ -8,6 +8,18 @@ import { JwtPayload } from '../../shared/types';
 
 const authRepository = new AuthRepository();
 
+// Normaliza el nombre del rol a un valor canónico (sin acentos, minúsculas)
+const normalizeRole = (rol: string): string => {
+  const normalized = (rol || '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const aliases: Record<string, string> = {
+    admin: 'administrador',
+    agronomo: 'agronomo',
+    agricultor: 'agricultor',
+    usuario: 'agricultor',
+  };
+  return aliases[normalized] || normalized;
+};
+
 export interface LoginResult {
   token: string;
   user: {
@@ -36,11 +48,13 @@ export class AuthService {
 
     await authRepository.updateLastAccess(user.id);
 
+    const normalizedRole = normalizeRole((user as any).rol_nombre);
+
     const payload: JwtPayload = {
       userId: user.id,
       email: user.email,
       rolId: user.rol_id,
-      rolNombre: (user as any).rol_nombre,
+      rolNombre: normalizedRole,
     };
 
     const token = jwt.sign(payload, env.jwt.secret, { expiresIn: env.jwt.expiresIn as any });
@@ -53,7 +67,7 @@ export class AuthService {
         apellido: user.apellido,
         email: user.email,
         avatar: user.avatar,
-        rol: (user as any).rol_nombre,
+        rol: normalizedRole,
         organizacion: user.organizacion,
         cargo: user.cargo,
       },
@@ -90,7 +104,7 @@ export class AuthService {
     if (!user) {
       throw new AppError('Usuario no encontrado', 404);
     }
-    return user;
+    return { ...user, rol_nombre: normalizeRole((user as any).rol_nombre) };
   }
 
   async forgotPassword(email: string): Promise<void> {

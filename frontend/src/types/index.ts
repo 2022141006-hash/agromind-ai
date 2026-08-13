@@ -126,6 +126,7 @@ export interface Recommendation {
   tipo_suelo_nombre?: string;
   fertilizante_nombre?: string;
   fertilizante_codigo?: string;
+  fertilizante_codigo_predicho?: string | null;
   fertilizante_descripcion?: string;
   fertilizante_modo_aplicacion?: string;
   frecuencia_aplicacion?: string;

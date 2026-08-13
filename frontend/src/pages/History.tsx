@@ -149,8 +149,11 @@ export const History: React.FC = () => {
                     <td>{rec.tipo_suelo_nombre || `Suelo #${rec.tipo_suelo_id}`}</td>
                     <td>
                       <span className="badge-green font-mono">
-                        {rec.fertilizante_codigo || rec.fertilizante_nombre || 'N/A'}
+                        {rec.fertilizante_codigo || rec.fertilizante_codigo_predicho || rec.fertilizante_nombre || 'N/A'}
                       </span>
+                      {!rec.fertilizante_codigo && rec.fertilizante_codigo_predicho && (
+                        <span className="ml-1 text-[10px] text-surface-400">(predicción IA)</span>
+                      )}
                     </td>
                     <td className="font-semibold">
                       {rec.cantidad_recomendada} {rec.unidad_cantidad}

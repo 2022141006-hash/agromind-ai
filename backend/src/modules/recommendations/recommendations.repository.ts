@@ -102,6 +102,7 @@ export class RecommendationsRepository {
         'r.materia_organica', 'r.conductividad_electrica',
         'r.cantidad_recomendada', 'r.unidad_cantidad', 'r.nivel_confianza',
         'r.nivel_riesgo', 'r.estado_analisis', 'r.created_at',
+        'r.fertilizante_codigo_predicho',
         'c.nombre as cultivo_nombre',
         'ts.nombre as tipo_suelo_nombre',
         'f.nombre as fertilizante_nombre',

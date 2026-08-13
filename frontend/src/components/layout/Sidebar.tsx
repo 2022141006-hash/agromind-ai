@@ -25,6 +25,12 @@ const navItems: NavItem[] = [
   { to: '/admin', label: 'Administración', icon: Settings, roles: ['administrador'] },
 ];
 
+const normalizeRole = (rol?: string): string => {
+  const r = (rol || '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const aliases: Record<string, string> = { admin: 'administrador', usuario: 'agricultor' };
+  return aliases[r] || r;
+};
+
 export const Sidebar: React.FC = () => {
   const { sidebarCollapsed, toggleSidebar, darkMode, toggleDarkMode } = useUIStore();
   const { user, logout } = useAuthStore();
@@ -40,8 +46,10 @@ export const Sidebar: React.FC = () => {
     }
   };
 
+  const userRole = normalizeRole(user?.rol);
+
   const filteredItems = navItems.filter(
-    (item) => !item.roles || item.roles.includes(user?.rol || '')
+    (item) => !item.roles || item.roles.includes(userRole)
   );
 
   return (

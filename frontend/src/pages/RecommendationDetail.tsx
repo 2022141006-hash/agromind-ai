@@ -129,8 +129,8 @@ export const RecommendationDetail: React.FC = () => {
           <p className="text-xs font-semibold uppercase tracking-wider text-white/80">Prescripción de Fertilizante Recomendado</p>
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
-              <h2 className="text-3xl font-extrabold">{rec.fertilizante_nombre || rec.fertilizante_codigo}</h2>
-              <p className="text-xs text-white/90 font-mono mt-0.5">Código Modelo: {rec.fertilizante_codigo}</p>
+              <h2 className="text-3xl font-extrabold">{rec.fertilizante_nombre || rec.fertilizante_codigo || rec.fertilizante_codigo_predicho}</h2>
+              <p className="text-xs text-white/90 font-mono mt-0.5">Código Modelo: {rec.fertilizante_codigo || rec.fertilizante_codigo_predicho}</p>
             </div>
             <div className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 text-right">
               <span className="text-[11px] uppercase tracking-wider block text-white/80">Dosis Recomendada</span>
